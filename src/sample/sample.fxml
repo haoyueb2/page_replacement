@@ -1,8 +1,103 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox layoutX="99.0" layoutY="26.0" prefHeight="117.0" prefWidth="534.0">
+         <children>
+            <VBox prefHeight="124.0" prefWidth="126.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="126.0" text="Page1" />
+                  <Label fx:id="page0" prefHeight="50.0" prefWidth="126.0" text="-1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="124.0" prefWidth="126.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="126.0" text="Page2" />
+                  <Label fx:id="page1" prefHeight="50.0" prefWidth="126.0" text="-1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="124.0" prefWidth="126.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="126.0" text="Page3" />
+                  <Label fx:id="page2" prefHeight="50.0" prefWidth="126.0" text="-1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="124.0" prefWidth="126.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="126.0" text="Page4" />
+                  <Label fx:id="page3" prefHeight="50.0" prefWidth="126.0" text="-1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <TableView fx:id="table" layoutX="72.0" layoutY="192.0" prefHeight="407.0" prefWidth="462.0">
+        <columns>
+          <TableColumn fx:id="instructionCol" editable="false" prefWidth="232.7999725341797" sortable="false" text="指令" />
+          <TableColumn fx:id="pageAddressCol" editable="false" minWidth="0.0" prefWidth="195.20001220703125" sortable="false" text="对应页号" />
+        </columns>
+      </TableView>
+      <VBox layoutX="617.0" layoutY="44.0" prefHeight="118.0" prefWidth="126.0">
+         <children>
+            <RadioButton fx:id="fifo" mnemonicParsing="false" prefHeight="58.0" prefWidth="124.0" text="FIFO" />
+            <RadioButton fx:id="lru" mnemonicParsing="false" prefHeight="58.0" prefWidth="124.0" text="LRU" />
+         </children>
+      </VBox>
+      <VBox layoutX="669.0" layoutY="424.0" prefHeight="154.0" prefWidth="188.0">
+         <children>
+            <Button fx:id="generate" mnemonicParsing="false" prefHeight="38.0" prefWidth="169.0" text="生成指令" />
+            <Button fx:id="single" mnemonicParsing="false" prefHeight="38.0" prefWidth="169.0" text="单步执行" />
+            <Button fx:id="end" mnemonicParsing="false" prefHeight="38.0" prefWidth="169.0" text="执行到底" />
+         </children>
+      </VBox>
+      <VBox layoutX="633.0" layoutY="228.0" prefHeight="168.0" prefWidth="217.0">
+         <children>
+            <HBox prefHeight="86.0" prefWidth="217.0">
+               <children>
+                  <Label prefHeight="85.0" prefWidth="89.0" text="缺页次数" />
+                  <Label fx:id="faultNumber" prefHeight="85.0" prefWidth="89.0" text="0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="86.0" prefWidth="217.0">
+               <children>
+                  <Label prefHeight="85.0" prefWidth="89.0" text="缺页率" />
+                  <Label fx:id="faultRate" prefHeight="84.0" prefWidth="77.0" text="0%">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
