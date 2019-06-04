@@ -68,11 +68,12 @@
             <RadioButton fx:id="lru" mnemonicParsing="false" prefHeight="58.0" prefWidth="124.0" text="LRU" />
          </children>
       </VBox>
-      <VBox layoutX="669.0" layoutY="424.0" prefHeight="154.0" prefWidth="188.0">
+      <VBox layoutX="669.0" layoutY="424.0" prefHeight="177.0" prefWidth="191.0">
          <children>
             <Button fx:id="generate" mnemonicParsing="false" prefHeight="38.0" prefWidth="169.0" text="生成指令" />
             <Button fx:id="single" mnemonicParsing="false" prefHeight="38.0" prefWidth="169.0" text="单步执行" />
             <Button fx:id="end" mnemonicParsing="false" prefHeight="38.0" prefWidth="169.0" text="执行到底" />
+            <Button fx:id="reset" mnemonicParsing="false" prefHeight="38.0" prefWidth="169.0" text="重置" />
          </children>
       </VBox>
       <VBox layoutX="633.0" layoutY="228.0" prefHeight="168.0" prefWidth="217.0">
@@ -90,7 +91,7 @@
             <HBox prefHeight="86.0" prefWidth="217.0">
                <children>
                   <Label prefHeight="85.0" prefWidth="89.0" text="缺页率" />
-                  <Label fx:id="faultRate" prefHeight="84.0" prefWidth="77.0" text="0%">
+                  <Label fx:id="faultRate" prefHeight="84.0" prefWidth="77.0" text="0">
                      <font>
                         <Font size="24.0" />
                      </font>
