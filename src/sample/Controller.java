@@ -28,7 +28,29 @@ public class Controller {
     public ToggleGroup  algorithms = new ToggleGroup();
     public Button reset = new Button();
     private ObservableList<Instruction> sequence =
-            FXCollections.observableArrayList();
+            FXCollections.observableArrayList(
+                    new Instruction(0,7),
+                    new Instruction(0,0),
+                    new Instruction(0,1),
+                    new Instruction(0,2),
+                    new Instruction(0,0),
+                    new Instruction(0,3),
+                    new Instruction(0,0),
+                    new Instruction(0,4),
+                    new Instruction(0,2),
+                    new Instruction(0,3),
+                    new Instruction(0,0),
+                    new Instruction(0,3),
+                    new Instruction(0,2),
+                    new Instruction(0,1),
+                    new Instruction(0,2),
+                    new Instruction(0,0),
+                    new Instruction(0,1),
+                    new Instruction(0,7),
+                    new Instruction(0,0),
+                    new Instruction(0,1)
+            );
+
     Deque<Integer> memoryPages = new LinkedList<Integer>();
     private int allNum = 0;
     private int faultNum = 0;
@@ -110,19 +132,19 @@ public class Controller {
             faultNum++;
             allNum++;
             //Platform.runLater是为了配合执行到底时，因为runToEnd是另一个线程
-            if(memoryPages.size() < 4) {
+            if(memoryPages.size() < 3) {
                 memoryPages.offer(page);
                 Platform.runLater(()-> {
                     pages[pageIndex].setText(Integer.toString(page));
-                    pageIndex = (pageIndex + 1) % 4;
+                    pageIndex = (pageIndex + 1) %3;
                 });
 
-            } else if(memoryPages.size() == 4) {
+            } else if(memoryPages.size() == 3) {
                 memoryPages.poll();
                 memoryPages.offer(page);
                 Platform.runLater(()-> {
                     pages[pageIndex].setText(Integer.toString(page));
-                    pageIndex = (pageIndex + 1) % 4;
+                    pageIndex = (pageIndex + 1) % 3;
                 });
             }
         }
@@ -145,16 +167,16 @@ public class Controller {
         } else {
             faultNum++;
             allNum++;
-            if(memoryPages.size() < 4) {
+            if(memoryPages.size() < 3) {
                 memoryPages.offer(page);
                 Platform.runLater(()-> {
                     pages[pageIndex].setText(Integer.toString(page));
-                    pageIndex = (pageIndex + 1) % 4;
+                    pageIndex = (pageIndex + 1) % 3;
                 });
-            } else if(memoryPages.size() == 4) {
+            } else if(memoryPages.size() == 3) {
                 int poll = memoryPages.poll();
                 Platform.runLater(()-> {
-                    for(int i = 0; i < 4;i++) {
+                    for(int i = 0; i < 3;i++) {
                         if(pages[i].getText().equals(Integer.toString(poll))) {
                             pages[i].setText(Integer.toString(page));
                         }
