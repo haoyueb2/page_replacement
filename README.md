@@ -42,7 +42,7 @@
 
 以javafx的TableView组件展示指令序列。第一列是指令序号，第二列展示的是指令对应的页号。最上边的指令为即将执行的指令
 
-![1559836884194](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559836884194.png)
+![1559836884194](./image/1559836884194.png)
 
 该组件与javafx的observableList的一个实例绑定(第一行对应instruction,第二行对应pageAddress)：
 
@@ -89,7 +89,7 @@ Deque<Integer> memoryPages = new LinkedList<Integer>();
 
 当前内存页的显示用Label的数组`public Label[] pages = new Label[4]`。
 
-![1559878756780](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559878756780.png)
+![1559878756780](./image/1559878756780.png)
 
 memoryPages与pages每一个时刻存的页是一样的，但是顺序不一定相同，memoryPages的顺序是为了配合FIFO算法或者LRU算法，在头部的永远是即将最先被替换的。
 
@@ -221,7 +221,7 @@ singleFifo和singleLru的Platform.runlater()也正是因为这两个函数可能
         });
 ```
 
-![1559886274540](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559886274540.png)
+![1559886274540](./image/1559886274540.png)
 
 
 
@@ -229,7 +229,7 @@ singleFifo和singleLru的Platform.runlater()也正是因为这两个函数可能
 
 点击单步执行后，选择算法就处于Disable状态，生成指令按钮也处于Disable状态。
 
-![1559886442035](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559886442035.png)
+![1559886442035](./image/1559886442035.png)
 
 点击执行到底后，以上按钮和单步执行按钮也都会处于Disable状态，防止出现混乱。
 
@@ -239,20 +239,20 @@ singleFifo和singleLru的Platform.runlater()也正是因为这两个函数可能
 
 
 
-![1559886824080](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559886824080.png)
+![1559886824080](./image/1559886824080.png)
 
 初始界面如图，page为-1表示还没有页调入。先要点击生成指令：
 
-![1559886907880](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559886907880.png)
+![1559886907880](./image/1559886907880.png)
 
 选择算法后，即可点击单步执行后者执行到底，点击单步执行后列表的头部的指令就poll出去，相应的页也被调入内存：
 
-![1559886981577](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559886981577.png)
+![1559886981577](./image/1559886981577.png)
 
 某一次生成指令选择LRU执行到底后：
 
-![1559831690064](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559831690064.png)
+![1559831690064](./image/1559831690064.png)
 
 某一次生成指令选择FIFO执行到底后：
 
-![1559887327434](C:\Users\74293\AppData\Roaming\Typora\typora-user-images\1559887327434.png)
+![1559887327434](./image/1559887327434.png)
